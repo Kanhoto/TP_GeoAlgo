@@ -50,8 +50,8 @@ Facet_int_map simpleThreshold(Polyhedron & mesh, Facet_double_map & values) {
     std::vector<double> vecValues;
     vecValues.reserve(values.size());
 
-    for (auto it = values.begin(); it != values.end(); ++it) {
-        Polyhedron::Facet_handle facet = it->first;
+    for ( auto it = values.begin(); it != values.end(); ++it) {
+        Polyhedron::Facet_const_handle facet = it->first;
         double value = it->second;
         vecValues.push_back(value);
     }
@@ -59,7 +59,7 @@ Facet_int_map simpleThreshold(Polyhedron & mesh, Facet_double_map & values) {
     auto average = std::accumulate(vecValues.begin(), vecValues.end(), 0.0) / vecValues.size();
 
      for (auto it = values.begin(); it != values.end(); ++it) {
-        Polyhedron::Facet_handle facet = it->first;
+        Polyhedron::Facet_const_handle facet = it->first;
         double value = it->second;
         result[facet] = value >= average ? 1 : 0;
     }
@@ -107,12 +107,13 @@ int main(int argc, char *argv[])
 	}
 
     Facet_double_map mapPerim = computePerimMap(mesh);
+	
     Facet_int_map result = simpleThreshold(mesh,mapPerim);
 
     for (auto it = result.begin(); it != result.end(); ++it) {
-        Polyhedron::Facet_handle facet = it->first;
+        Polyhedron::Facet_const_handle facet = it->first;
         int integer = it->second;
-        std::cout << "Facet " << facet->index() << " : " << integer << std::endl;
+        std::cout  << integer << std::endl;
     }
 
 	return 0;
