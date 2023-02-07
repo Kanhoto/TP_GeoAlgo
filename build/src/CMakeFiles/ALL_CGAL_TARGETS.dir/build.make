@@ -62,10 +62,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo"
+CMAKE_SOURCE_DIR = /home/local.isima.fr/vadinardo/TP_GeoAlgo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build"
+CMAKE_BINARY_DIR = /home/local.isima.fr/vadinardo/TP_GeoAlgo/build
 
 # Utility rule file for ALL_CGAL_TARGETS.
 
@@ -82,10 +82,10 @@ src/CMakeFiles/ALL_CGAL_TARGETS.dir/build: ALL_CGAL_TARGETS
 .PHONY : src/CMakeFiles/ALL_CGAL_TARGETS.dir/build
 
 src/CMakeFiles/ALL_CGAL_TARGETS.dir/clean:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build/src" && $(CMAKE_COMMAND) -P CMakeFiles/ALL_CGAL_TARGETS.dir/cmake_clean.cmake
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src && $(CMAKE_COMMAND) -P CMakeFiles/ALL_CGAL_TARGETS.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/ALL_CGAL_TARGETS.dir/clean
 
 src/CMakeFiles/ALL_CGAL_TARGETS.dir/depend:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo" "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/src" "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build/src" "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build/src/CMakeFiles/ALL_CGAL_TARGETS.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/local.isima.fr/vadinardo/TP_GeoAlgo /home/local.isima.fr/vadinardo/TP_GeoAlgo/src /home/local.isima.fr/vadinardo/TP_GeoAlgo/build /home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src /home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src/CMakeFiles/ALL_CGAL_TARGETS.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/ALL_CGAL_TARGETS.dir/depend
 

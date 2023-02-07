@@ -1,4 +1,4 @@
-# Install script for directory: /home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/src
+# Install script for directory: /home/local.isima.fr/vadinardo/TP_GeoAlgo/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
