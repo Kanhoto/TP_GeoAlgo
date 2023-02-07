@@ -67,10 +67,17 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/local.isima.fr/vadinardo/TP_GeoAlgo
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/local.isima.fr/vadinardo/TP_GeoAlgo/build
+=======
+CMAKE_SOURCE_DIR = /home/local.isima.fr/vicanhotod/TP_GeoAlgo
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +106,15 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
+<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/local.isima.fr/vadinardo/TP_GeoAlgo/build/CMakeFiles /home/local.isima.fr/vadinardo/TP_GeoAlgo/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/local.isima.fr/vadinardo/TP_GeoAlgo/build/CMakeFiles 0
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/CMakeFiles /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build//CMakeFiles/progress.marks
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/CMakeFiles 0
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : all
 
 # The main clean target
@@ -130,6 +143,7 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+<<<<<<< HEAD
 # Target rules for targets named seuillage
 
 # Build rule for target.
@@ -143,6 +157,8 @@ seuillage/fast:
 .PHONY : seuillage/fast
 
 #=============================================================================
+=======
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 # Target rules for targets named cgal_check_build_system
 
 # Build rule for target.
@@ -206,7 +222,10 @@ help:
 	@echo "... cgal_check_build_system"
 	@echo "... genre"
 	@echo "... measures"
+<<<<<<< HEAD
 	@echo "... seuillage"
+=======
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : help
 
 

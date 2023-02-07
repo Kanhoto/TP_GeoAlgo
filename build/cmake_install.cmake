@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Install script for directory: /home/local.isima.fr/vadinardo/TP_GeoAlgo
+=======
+# Install script for directory: /home/local.isima.fr/vicanhotod/TP_GeoAlgo
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,8 +47,14 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+<<<<<<< HEAD
   # Include the install script for the subdirectory.
   include("/home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src/cmake_install.cmake")
+=======
+  # Include the install script for each subdirectory.
+  include("/home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src/cmake_install.cmake")
+
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -55,5 +65,9 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
+<<<<<<< HEAD
 file(WRITE "/home/local.isima.fr/vadinardo/TP_GeoAlgo/build/${CMAKE_INSTALL_MANIFEST}"
+=======
+file(WRITE "/home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/${CMAKE_INSTALL_MANIFEST}"
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

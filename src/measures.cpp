@@ -4,6 +4,10 @@
 
 #include <iostream>
 #include <fstream>
+<<<<<<< HEAD
+=======
+#include <vector>
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 
 typedef CGAL::Exact_predicates_inexact_constructions_kernel Kernel;
 typedef CGAL::Polyhedron_3<Kernel> Polyhedron;
@@ -16,6 +20,28 @@ typedef Polyhedron::Halfedge_around_facet_const_circulator Halfedge_facet_circul
 typedef std::map<Polyhedron::Facet_const_handle, double> Facet_double_map;
 typedef std::map<Polyhedron::Facet_const_handle, int> Facet_int_map;
 
+<<<<<<< HEAD
+=======
+struct Color_t{
+	double red=0;
+	double green=0;
+	double blue=0;
+};
+
+std::vector<Color_t> colorClasses;
+
+void GenerateRandomColorClasses(std::vector<Color_t> & vec_i, int n){
+	Color_t c;
+	for(int i=0; i<n; ++i){
+		c.red = (double)rand() / RAND_MAX;
+		c.green = (double)rand() / RAND_MAX;
+		c.blue = (double)rand() / RAND_MAX;
+
+		vec_i.push_back(c);
+	}
+}
+
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 /// @brief map all the values from [min, max] to [0, 1]
 /// @param facetMap non-const reference to the map (it is an in/out parameter)
 void normalizeMap(Facet_double_map &facetMap)
@@ -62,6 +88,10 @@ void writeOFFfromValueMap(const Polyhedron& mesh, const Facet_double_map& facetM
 	std::copy(mesh.points_begin(), mesh.points_end(),
 			  std::ostream_iterator<Kernel::Point_3>(in_myfile, "\n"));
 
+<<<<<<< HEAD
+=======
+	int cpt=0;
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 	for (Facet_iterator i = mesh.facets_begin(); i != mesh.facets_end(); ++i)
 	{
 		Halfedge_facet_circulator j = i->facet_begin();
@@ -77,6 +107,7 @@ void writeOFFfromValueMap(const Polyhedron& mesh, const Facet_double_map& facetM
 
 		in_myfile << std::setprecision(5) << std::fixed; //set the format of floats to X.XXXXX
 
+<<<<<<< HEAD
 		auto redValue = 1-facetMap.at(i); // low values will be closer to red
 		auto greenValue = facetMap.at(i); // high values will be closer to green
 		auto blueValue = 0.0;
@@ -84,6 +115,17 @@ void writeOFFfromValueMap(const Polyhedron& mesh, const Facet_double_map& facetM
 		in_myfile << " " << redValue << " " << greenValue << " " << blueValue;
 
 		in_myfile << std::endl;
+=======
+		Color_t c;
+		c.red = 1- facetMap.at(i) * colorClasses[cpt].red; // low values will be closer to red
+		c.green = facetMap.at(i) * colorClasses[cpt].green; // high values will be closer to green
+		c.blue = facetMap.at(i) * colorClasses[cpt].blue;
+
+		in_myfile << " " << c.red << " " << c.green << " " << c.blue;
+
+		in_myfile << std::endl;
+		cpt = (++cpt)%15;
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 	}
 
 	in_myfile.close();
@@ -160,9 +202,19 @@ int main(int argc, char *argv[])
 
 	auto mapPerim = computePerimMap(mesh);
 
+<<<<<<< HEAD
+=======
+	const int numberOfClasses = 15;
+	GenerateRandomColorClasses(colorClasses, numberOfClasses);
+
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 	normalizeMap(mapPerim);
 
 	writeOFFfromValueMap(mesh, mapPerim, argc>=3?argv[2]:"result.off");
 
 	return 0;
 }
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
