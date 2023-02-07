@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# Install script for directory: /home/local.isima.fr/vadinardo/TP_GeoAlgo/src
-=======
 # Install script for directory: /home/local.isima.fr/vicanhotod/TP_GeoAlgo/src
->>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

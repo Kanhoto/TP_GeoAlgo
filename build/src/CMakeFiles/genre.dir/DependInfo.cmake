@@ -4,11 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-<<<<<<< HEAD
-  "/home/local.isima.fr/vadinardo/TP_GeoAlgo/src/genre.cpp" "/home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src/CMakeFiles/genre.dir/genre.cpp.o"
-=======
   "/home/local.isima.fr/vicanhotod/TP_GeoAlgo/src/genre.cpp" "/home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src/CMakeFiles/genre.dir/genre.cpp.o"
->>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

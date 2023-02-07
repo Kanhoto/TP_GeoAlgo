@@ -66,7 +66,6 @@ Facet_int_map simpleThreshold(Polyhedron & mesh, Facet_double_map & values) {
     return result;
 }
 
-
 Facet_double_map computePerimMap(const Polyhedron &mesh)
 {
 	Facet_double_map out;

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/local.isima.fr/vadinardo/TP_GeoAlgo/src/seuillage.cpp
+/home/local.isima.fr/vicanhotod/TP_GeoAlgo/src/seuillage.cpp
 CGAL/Exact_predicates_inexact_constructions_kernel.h
 -
 CGAL/boost/graph/graph_traits_Polyhedron_3.h

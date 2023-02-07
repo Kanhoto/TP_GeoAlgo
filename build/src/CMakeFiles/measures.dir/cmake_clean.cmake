@@ -1,13 +1,7 @@
 file(REMOVE_RECURSE
-<<<<<<< HEAD
   "../measures"
   "../measures.pdb"
   "CMakeFiles/measures.dir/measures.cpp.o"
-=======
-  "CMakeFiles/measures.dir/measures.cpp.o"
-  "measures"
-  "measures.pdb"
->>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 )
 
 # Per-language clean rules from dependency scanning.

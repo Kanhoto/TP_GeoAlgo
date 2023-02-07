@@ -62,17 +62,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
-CMAKE_SOURCE_DIR = /home/local.isima.fr/vadinardo/TP_GeoAlgo
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/local.isima.fr/vadinardo/TP_GeoAlgo/build
-=======
 CMAKE_SOURCE_DIR = /home/local.isima.fr/vicanhotod/TP_GeoAlgo
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build
->>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 
 # Utility rule file for cgal_check_build_system.
 
@@ -89,18 +82,10 @@ src/CMakeFiles/cgal_check_build_system.dir/build: cgal_check_build_system
 .PHONY : src/CMakeFiles/cgal_check_build_system.dir/build
 
 src/CMakeFiles/cgal_check_build_system.dir/clean:
-<<<<<<< HEAD
-	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src && $(CMAKE_COMMAND) -P CMakeFiles/cgal_check_build_system.dir/cmake_clean.cmake
-.PHONY : src/CMakeFiles/cgal_check_build_system.dir/clean
-
-src/CMakeFiles/cgal_check_build_system.dir/depend:
-	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/local.isima.fr/vadinardo/TP_GeoAlgo /home/local.isima.fr/vadinardo/TP_GeoAlgo/src /home/local.isima.fr/vadinardo/TP_GeoAlgo/build /home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src /home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src/CMakeFiles/cgal_check_build_system.dir/DependInfo.cmake --color=$(COLOR)
-=======
 	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src && $(CMAKE_COMMAND) -P CMakeFiles/cgal_check_build_system.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/cgal_check_build_system.dir/clean
 
 src/CMakeFiles/cgal_check_build_system.dir/depend:
 	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/local.isima.fr/vicanhotod/TP_GeoAlgo /home/local.isima.fr/vicanhotod/TP_GeoAlgo/src /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src/CMakeFiles/cgal_check_build_system.dir/DependInfo.cmake --color=$(COLOR)
->>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : src/CMakeFiles/cgal_check_build_system.dir/depend
 

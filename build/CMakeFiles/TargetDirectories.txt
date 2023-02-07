@@ -1,20 +1,9 @@
-<<<<<<< HEAD
-/home/local.isima.fr/vadinardo/TP_GeoAlgo/build/CMakeFiles/rebuild_cache.dir
-/home/local.isima.fr/vadinardo/TP_GeoAlgo/build/CMakeFiles/edit_cache.dir
-/home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src/CMakeFiles/edit_cache.dir
-/home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src/CMakeFiles/seuillage.dir
-/home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src/CMakeFiles/rebuild_cache.dir
-/home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src/CMakeFiles/cgal_check_build_system.dir
-/home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src/CMakeFiles/measures.dir
-/home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src/CMakeFiles/ALL_CGAL_TARGETS.dir
-/home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src/CMakeFiles/genre.dir
-=======
 /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/CMakeFiles/rebuild_cache.dir
 /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/CMakeFiles/edit_cache.dir
 /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src/CMakeFiles/edit_cache.dir
+/home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src/CMakeFiles/seuillage.dir
 /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src/CMakeFiles/rebuild_cache.dir
 /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src/CMakeFiles/cgal_check_build_system.dir
 /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src/CMakeFiles/measures.dir
 /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src/CMakeFiles/ALL_CGAL_TARGETS.dir
 /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src/CMakeFiles/genre.dir
->>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
