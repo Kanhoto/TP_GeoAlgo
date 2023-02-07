@@ -3,14 +3,18 @@
 #include <CGAL/IO/Polyhedron_iostream.h>
 #include <iostream>
 #include <fstream>
+<<<<<<< HEAD
 #include <CGAL/Simple_cartesian.h>
 #include <CGAL/Polyhedron_3.h>
 
+=======
+>>>>>>> val
 typedef CGAL::Exact_predicates_inexact_constructions_kernel Kernel;
 typedef CGAL::Polyhedron_3<Kernel> Polyhedron;
 typedef Polyhedron::Facet_iterator Facet_iterator;
 typedef Polyhedron::Vertex_iterator Vertex_iterator;
 typedef Polyhedron::Halfedge_iterator Halfedge_iterator;
+<<<<<<< HEAD
 //typedef CGAL::Simple_cartesian<double> Kernel;
 typedef Kernel::Point_3 Point_3;
 typedef Polyhedron::Halfedge_around_facet_circulator Halfedge_facet_circulator;
@@ -28,11 +32,38 @@ unsigned int vertsCount(Polyhedron & poly_i){
 unsigned int edgesCount(Polyhedron & poly_i){
 	unsigned int nbEdges = 0;
 	for (Halfedge_iterator i = poly_i.halfedges_begin(); i != poly_i.halfedges_end(); ++i) {
+=======
+
+
+int main(int argc, char* argv[])
+{
+	if (argc < 2) {
+		std::cerr << "Il manque un paramètre au programme. Veuillez lui donner en entrée un nom de fichier au format off." << std::endl;
+		return 1;
+	}
+	
+	Polyhedron mesh;
+  std::ifstream input(argv[1]);
+	 if (!input || !(input >> mesh) || mesh.is_empty()) {
+    std::cerr << "Le fichier donné n'est pas un fichier off valide." << std::endl;
+    return 1;
+  }
+  
+  unsigned int nbVerts = 0;
+	for (Vertex_iterator i = mesh.vertices_begin(); i != mesh.vertices_end(); ++i) {
+		++nbVerts;
+	}
+	std::cout << "Nombre de sommets: " << nbVerts << std::endl;
+	
+	unsigned int nbEdges = 0;
+	for (Halfedge_iterator i = mesh.halfedges_begin(); i != mesh.halfedges_end(); ++i) {
+>>>>>>> val
 		++nbEdges;
 	}
 	nbEdges /= 2;
 	std::cout << "Nombre d'arêtes: " << nbEdges << std::endl;
 
+<<<<<<< HEAD
 	return nbEdges;
 }
 
@@ -91,6 +122,13 @@ int main(int argc, char* argv[])
 	unsigned int nbFaces = facesCount(mesh);
 
 	meshPerimeter(mesh);
+=======
+	unsigned int nbFaces = 0;
+	for (Facet_iterator i = mesh.facets_begin(); i != mesh.facets_end(); ++i) {
+		++nbFaces;
+	}
+	std::cout << "Nombre de faces: " << nbFaces << std::endl;
+>>>>>>> val
 	
 	unsigned int euler = nbVerts - nbEdges + nbFaces;
 	unsigned int genus = (2 - euler) / 2;
