@@ -1,19 +1,4 @@
-#include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
-#include <CGAL/boost/graph/graph_traits_Polyhedron_3.h>
-#include <CGAL/IO/Polyhedron_iostream.h>
-#include <iostream>
-#include <fstream>
-#include <CGAL/Simple_cartesian.h>
-#include <CGAL/Polyhedron_3.h>
-
-typedef CGAL::Exact_predicates_inexact_constructions_kernel Kernel;
-typedef CGAL::Polyhedron_3<Kernel> Polyhedron;
-typedef Polyhedron::Facet_iterator Facet_iterator;
-typedef Polyhedron::Vertex_iterator Vertex_iterator;
-typedef Polyhedron::Halfedge_iterator Halfedge_iterator;
-//typedef CGAL::Simple_cartesian<double> Kernel;
-typedef Kernel::Point_3 Point_3;
-typedef Polyhedron::Halfedge_around_facet_circulator Halfedge_facet_circulator;
+#include "sharedType.hpp"
 
 unsigned int vertsCount(Polyhedron & poly_i){
 	unsigned int nbVerts = 0;
@@ -68,10 +53,7 @@ void meshPerimeter(Polyhedron & poly_i){
     }
 }
 
-void exportCgalOffWithColor(std::ostream & out, std::map<Polyhedron::Facet_handle, double> & maillage){
-
-}
-
+/*
 int main(int argc, char* argv[])
 {
 	if (argc < 2) {
@@ -99,3 +81,4 @@ int main(int argc, char* argv[])
   
 	return 0;
 }
+*/

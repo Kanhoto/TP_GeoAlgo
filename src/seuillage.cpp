@@ -1,51 +1,38 @@
-#include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
-#include <CGAL/boost/graph/graph_traits_Polyhedron_3.h>
-#include <CGAL/IO/Polyhedron_iostream.h>
+#include "sharedType.hpp"
 
-#include <iostream>
-#include <fstream>
-#include <map>
-#include <algorithm>
-#include <numeric>
-#include <vector>
+void GenerateRandomColorClasses(std::vector<Color_t> & vec_i, int n){
+	Color_t c;
+	
+	for(int i=0; i<n; ++i){
+		c.red = (double)rand() / RAND_MAX;
+		c.green = (double)rand() / RAND_MAX;
+		c.blue = (double)rand() / RAND_MAX;
 
-typedef CGAL::Exact_predicates_inexact_constructions_kernel Kernel;
-typedef CGAL::Polyhedron_3<Kernel> Polyhedron;
-
-typedef Polyhedron::Facet_const_iterator Facet_iterator;
-typedef Polyhedron::Vertex_const_iterator Vertex_iterator;
-typedef Polyhedron::Halfedge_const_iterator Halfedge_iterator;
-typedef Polyhedron::Halfedge_around_facet_const_circulator Halfedge_facet_circulator;
-
-typedef std::map<Polyhedron::Facet_const_handle, double> Facet_double_map;
-typedef std::map<Polyhedron::Facet_const_handle, int> Facet_int_map;
-
-void normalizeMap(Facet_double_map &facetMap)
-{
-	double maxValue = facetMap.begin()->second;
-	double minValue = facetMap.begin()->second;
-
-	// look for min and max value in the map
-	for (const auto &elem : facetMap)
-	{
-		if (elem.second > maxValue)
-		{
-			maxValue = elem.second;
-		}
-		if (elem.second < minValue)
-		{
-			minValue = elem.second;
-		}
+		vec_i.push_back(c);
 	}
 
-	for (auto &elem : facetMap)
-	{
-		elem.second -= minValue;
-		elem.second /= (maxValue-minValue);
-	}
+	/*
+	// RED
+	c.red = 1;
+	c.green = 0;
+	c.blue = 0;
+	vec_i.push_back(c);
+
+	// GREEN
+	c.red = 0;
+	c.green = 1;
+	c.blue = 0;
+	vec_i.push_back(c);
+	
+	// BLUE
+	c.red = 0;
+	c.green = 0;
+	c.blue = 1;
+	vec_i.push_back(c);
+	*/
 }
 
-Facet_int_map simpleThreshold(Polyhedron & mesh, Facet_double_map & values) {
+Facet_int_map simpleThreshold(const Polyhedron & mesh, const Facet_double_map & values){
     Facet_int_map result;
     std::vector<double> vecValues;
     vecValues.reserve(values.size());
@@ -66,28 +53,38 @@ Facet_int_map simpleThreshold(Polyhedron & mesh, Facet_double_map & values) {
     return result;
 }
 
+Facet_int_map multipleThreshold(const Polyhedron & mesh, const Facet_double_map & values){
+    Facet_int_map result;
+    std::vector<double> vecValues;
+    vecValues.reserve(values.size());
 
-Facet_double_map computePerimMap(const Polyhedron &mesh)
-{
-	Facet_double_map out;
+    for ( auto it = values.begin(); it != values.end(); ++it) {
+        Polyhedron::Facet_const_handle facet = it->first;
+        double value = it->second;
+        vecValues.push_back(value);
+    }
 
-	for (Facet_iterator i = mesh.facets_begin(); i != mesh.facets_end(); ++i)
-	{
-		double current_perimeter = 0.;
-		Halfedge_facet_circulator j = i->facet_begin();
-		do
-		{
-			current_perimeter += std::sqrt(CGAL::squared_distance(j->vertex()->point(), j->opposite()->vertex()->point()));
-		} while (++j != i->facet_begin());
+    auto average = std::accumulate(vecValues.begin(), vecValues.end(), 0.0) / vecValues.size();
 
-		std::cout << "perim(" << std::distance(mesh.facets_begin(), i) << ")=" << current_perimeter << std::endl;
+	auto firstpart = (2*average) * (double)1/(double)3;
+	auto secondpart = (2*average) * (double)2/(double)3;
 
-		out[i] = current_perimeter;
-	}
-
-	return out;
+	for (auto it = values.begin(); it != values.end(); ++it) {
+        Polyhedron::Facet_const_handle facet = it->first;
+        double value = it->second;
+		if(value <= firstpart){
+			result[facet] = 0;
+		}
+		else if(value > firstpart && value <= secondpart){
+			result[facet] = 1;
+		}else if(value > secondpart){
+			result[facet] = 2;
+		}
+    }
+    return result;
 }
 
+/*
 int main(int argc, char *argv[])
 {
 	if (argc < 2)
@@ -108,7 +105,7 @@ int main(int argc, char *argv[])
 
     Facet_double_map mapPerim = computePerimMap(mesh);
 	
-    Facet_int_map result = simpleThreshold(mesh,mapPerim);
+    Facet_int_map result = multipleThreshold(mesh,mapPerim);
 
     for (auto it = result.begin(); it != result.end(); ++it) {
         Polyhedron::Facet_const_handle facet = it->first;
@@ -118,3 +115,4 @@ int main(int argc, char *argv[])
 
 	return 0;
 }
+*/
