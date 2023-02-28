@@ -2,6 +2,7 @@
 #include "measures.cpp"
 #include "SegparCC.cpp"
 #include "export.cpp"
+#include "octree_base.cpp"
 
 int main(int argc, char *argv[])
 {
@@ -20,7 +21,7 @@ int main(int argc, char *argv[])
 		std::cerr << "Le fichier donné n'est pas un fichier off valide." << std::endl;
 		return 1;
 	}
-
+	/*
 	auto mapPerim = computePerimMap(mesh);
 
 	const int numberOfClasses = 3;
@@ -32,6 +33,11 @@ int main(int argc, char *argv[])
     segmentationParCC(mesh, result);
 
 	writeOFFfromValueMap(mesh, result, argc>=3?argv[2]:"result.off");
+	*/
+
+	const auto octree = generateOctree(mesh);
+
+	extractMeshFromOctree(octree,mesh);
 
 	return 0;
 }
