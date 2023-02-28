@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/src/seuillage.cpp
+CGAL/Exact_predicates_inexact_constructions_kernel.h
+-
+CGAL/boost/graph/graph_traits_Polyhedron_3.h
+-
+CGAL/IO/Polyhedron_iostream.h
+-
+iostream
+-
+fstream
+-
+map
+-
+algorithm
+-
+numeric
+-
+vector
+-
+
