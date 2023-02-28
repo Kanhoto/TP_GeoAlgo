@@ -3,7 +3,7 @@
 
 cmake_minimum_required(VERSION 3.1...3.15)
 
-project( 3 )
+project( src )
 
 
 # CGAL and its components
@@ -37,10 +37,10 @@ endif()
 # ##########################################################
 
 
-create_single_source_cgal_program( "genre.cpp" )
+#create_single_source_cgal_program( "genre.cpp" )
 
-create_single_source_cgal_program( "measures.cpp" )
+#create_single_source_cgal_program( "measures.cpp" )
 
-create_single_source_cgal_program( "seuillage.cpp" )
+#create_single_source_cgal_program( "seuillage.cpp" )
 
-
+create_single_source_cgal_program( "main.cpp" )

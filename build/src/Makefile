@@ -67,10 +67,17 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo"
+<<<<<<< HEAD
+CMAKE_SOURCE_DIR = /home/local.isima.fr/vadinardo/TP_GeoAlgo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build"
+CMAKE_BINARY_DIR = /home/local.isima.fr/vadinardo/TP_GeoAlgo/build
+=======
+CMAKE_SOURCE_DIR = /home/local.isima.fr/vicanhotod/TP_GeoAlgo
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,14 +106,24 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build/CMakeFiles" "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build/src//CMakeFiles/progress.marks"
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build/CMakeFiles" 0
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/local.isima.fr/vadinardo/TP_GeoAlgo/build/CMakeFiles /home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src//CMakeFiles/progress.marks
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/local.isima.fr/vadinardo/TP_GeoAlgo/build/CMakeFiles 0
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/CMakeFiles /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src//CMakeFiles/progress.marks
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/CMakeFiles 0
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : all
 
 # The main clean target
 clean:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : clean
 
 # The main clean target
@@ -116,22 +133,31 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/seuillage.dir/rule:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/seuillage.dir/rule
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/seuillage.dir/rule
 .PHONY : src/CMakeFiles/seuillage.dir/rule
 
 # Convenience name for target.
@@ -141,12 +167,20 @@ seuillage: src/CMakeFiles/seuillage.dir/rule
 
 # fast build rule for target.
 seuillage/fast:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/seuillage.dir/build.make src/CMakeFiles/seuillage.dir/build
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/seuillage.dir/build.make src/CMakeFiles/seuillage.dir/build
 .PHONY : seuillage/fast
 
 # Convenience name for target.
 src/CMakeFiles/cgal_check_build_system.dir/rule:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/cgal_check_build_system.dir/rule
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/cgal_check_build_system.dir/rule
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+.PHONY : depend
+
+# Convenience name for target.
+src/CMakeFiles/cgal_check_build_system.dir/rule:
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/cgal_check_build_system.dir/rule
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : src/CMakeFiles/cgal_check_build_system.dir/rule
 
 # Convenience name for target.
@@ -156,12 +190,20 @@ cgal_check_build_system: src/CMakeFiles/cgal_check_build_system.dir/rule
 
 # fast build rule for target.
 cgal_check_build_system/fast:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cgal_check_build_system.dir/build.make src/CMakeFiles/cgal_check_build_system.dir/build
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cgal_check_build_system.dir/build.make src/CMakeFiles/cgal_check_build_system.dir/build
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cgal_check_build_system.dir/build.make src/CMakeFiles/cgal_check_build_system.dir/build
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : cgal_check_build_system/fast
 
 # Convenience name for target.
 src/CMakeFiles/measures.dir/rule:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/measures.dir/rule
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/measures.dir/rule
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/measures.dir/rule
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : src/CMakeFiles/measures.dir/rule
 
 # Convenience name for target.
@@ -171,12 +213,20 @@ measures: src/CMakeFiles/measures.dir/rule
 
 # fast build rule for target.
 measures/fast:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/build
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/build
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/build
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : measures/fast
 
 # Convenience name for target.
 src/CMakeFiles/ALL_CGAL_TARGETS.dir/rule:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/ALL_CGAL_TARGETS.dir/rule
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/ALL_CGAL_TARGETS.dir/rule
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/ALL_CGAL_TARGETS.dir/rule
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : src/CMakeFiles/ALL_CGAL_TARGETS.dir/rule
 
 # Convenience name for target.
@@ -186,12 +236,20 @@ ALL_CGAL_TARGETS: src/CMakeFiles/ALL_CGAL_TARGETS.dir/rule
 
 # fast build rule for target.
 ALL_CGAL_TARGETS/fast:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ALL_CGAL_TARGETS.dir/build.make src/CMakeFiles/ALL_CGAL_TARGETS.dir/build
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ALL_CGAL_TARGETS.dir/build.make src/CMakeFiles/ALL_CGAL_TARGETS.dir/build
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ALL_CGAL_TARGETS.dir/build.make src/CMakeFiles/ALL_CGAL_TARGETS.dir/build
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : ALL_CGAL_TARGETS/fast
 
 # Convenience name for target.
 src/CMakeFiles/genre.dir/rule:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/genre.dir/rule
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/genre.dir/rule
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/genre.dir/rule
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : src/CMakeFiles/genre.dir/rule
 
 # Convenience name for target.
@@ -201,7 +259,11 @@ genre: src/CMakeFiles/genre.dir/rule
 
 # fast build rule for target.
 genre/fast:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/build
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/build
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/build
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : genre/fast
 
 genre.o: genre.cpp.o
@@ -210,7 +272,11 @@ genre.o: genre.cpp.o
 
 # target to build an object file
 genre.cpp.o:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/genre.cpp.o
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/genre.cpp.o
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/genre.cpp.o
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : genre.cpp.o
 
 genre.i: genre.cpp.i
@@ -219,7 +285,11 @@ genre.i: genre.cpp.i
 
 # target to preprocess a source file
 genre.cpp.i:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/genre.cpp.i
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/genre.cpp.i
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/genre.cpp.i
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : genre.cpp.i
 
 genre.s: genre.cpp.s
@@ -228,7 +298,11 @@ genre.s: genre.cpp.s
 
 # target to generate assembly for a file
 genre.cpp.s:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/genre.cpp.s
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/genre.cpp.s
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/genre.cpp.s
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : genre.cpp.s
 
 measures.o: measures.cpp.o
@@ -237,7 +311,11 @@ measures.o: measures.cpp.o
 
 # target to build an object file
 measures.cpp.o:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/measures.cpp.o
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/measures.cpp.o
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/measures.cpp.o
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : measures.cpp.o
 
 measures.i: measures.cpp.i
@@ -246,7 +324,11 @@ measures.i: measures.cpp.i
 
 # target to preprocess a source file
 measures.cpp.i:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/measures.cpp.i
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/measures.cpp.i
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/measures.cpp.i
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : measures.cpp.i
 
 measures.s: measures.cpp.s
@@ -255,7 +337,8 @@ measures.s: measures.cpp.s
 
 # target to generate assembly for a file
 measures.cpp.s:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/measures.cpp.s
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/measures.cpp.s
 .PHONY : measures.cpp.s
 
 seuillage.o: seuillage.cpp.o
@@ -264,7 +347,7 @@ seuillage.o: seuillage.cpp.o
 
 # target to build an object file
 seuillage.cpp.o:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/seuillage.dir/build.make src/CMakeFiles/seuillage.dir/seuillage.cpp.o
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/seuillage.dir/build.make src/CMakeFiles/seuillage.dir/seuillage.cpp.o
 .PHONY : seuillage.cpp.o
 
 seuillage.i: seuillage.cpp.i
@@ -273,7 +356,7 @@ seuillage.i: seuillage.cpp.i
 
 # target to preprocess a source file
 seuillage.cpp.i:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/seuillage.dir/build.make src/CMakeFiles/seuillage.dir/seuillage.cpp.i
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/seuillage.dir/build.make src/CMakeFiles/seuillage.dir/seuillage.cpp.i
 .PHONY : seuillage.cpp.i
 
 seuillage.s: seuillage.cpp.s
@@ -282,9 +365,14 @@ seuillage.s: seuillage.cpp.s
 
 # target to generate assembly for a file
 seuillage.cpp.s:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/seuillage.dir/build.make src/CMakeFiles/seuillage.dir/seuillage.cpp.s
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/seuillage.dir/build.make src/CMakeFiles/seuillage.dir/seuillage.cpp.s
 .PHONY : seuillage.cpp.s
 
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/measures.cpp.s
+.PHONY : measures.cpp.s
+
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -297,16 +385,22 @@ help:
 	@echo "... cgal_check_build_system"
 	@echo "... genre"
 	@echo "... measures"
+<<<<<<< HEAD
 	@echo "... seuillage"
+=======
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 	@echo "... genre.o"
 	@echo "... genre.i"
 	@echo "... genre.s"
 	@echo "... measures.o"
 	@echo "... measures.i"
 	@echo "... measures.s"
+<<<<<<< HEAD
 	@echo "... seuillage.o"
 	@echo "... seuillage.i"
 	@echo "... seuillage.s"
+=======
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : help
 
 
@@ -318,6 +412,10 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : cmake_check_build_system
 

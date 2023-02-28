@@ -62,10 +62,17 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo"
+<<<<<<< HEAD
+CMAKE_SOURCE_DIR = /home/local.isima.fr/vadinardo/TP_GeoAlgo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build"
+CMAKE_BINARY_DIR = /home/local.isima.fr/vadinardo/TP_GeoAlgo/build
+=======
+CMAKE_SOURCE_DIR = /home/local.isima.fr/vicanhotod/TP_GeoAlgo
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/measures.dir/depend.make
@@ -78,16 +85,29 @@ include src/CMakeFiles/measures.dir/flags.make
 
 src/CMakeFiles/measures.dir/measures.cpp.o: src/CMakeFiles/measures.dir/flags.make
 src/CMakeFiles/measures.dir/measures.cpp.o: ../src/measures.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/measures.dir/measures.cpp.o"
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build/src" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/measures.dir/measures.cpp.o -c "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/src/measures.cpp"
+<<<<<<< HEAD
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local.isima.fr/vadinardo/TP_GeoAlgo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/measures.dir/measures.cpp.o"
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/measures.dir/measures.cpp.o -c /home/local.isima.fr/vadinardo/TP_GeoAlgo/src/measures.cpp
 
 src/CMakeFiles/measures.dir/measures.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/measures.dir/measures.cpp.i"
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build/src" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/src/measures.cpp" > CMakeFiles/measures.dir/measures.cpp.i
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/local.isima.fr/vadinardo/TP_GeoAlgo/src/measures.cpp > CMakeFiles/measures.dir/measures.cpp.i
 
 src/CMakeFiles/measures.dir/measures.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/measures.dir/measures.cpp.s"
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build/src" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/src/measures.cpp" -o CMakeFiles/measures.dir/measures.cpp.s
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/local.isima.fr/vadinardo/TP_GeoAlgo/src/measures.cpp -o CMakeFiles/measures.dir/measures.cpp.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/measures.dir/measures.cpp.o"
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/measures.dir/measures.cpp.o -c /home/local.isima.fr/vicanhotod/TP_GeoAlgo/src/measures.cpp
+
+src/CMakeFiles/measures.dir/measures.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/measures.dir/measures.cpp.i"
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/local.isima.fr/vicanhotod/TP_GeoAlgo/src/measures.cpp > CMakeFiles/measures.dir/measures.cpp.i
+
+src/CMakeFiles/measures.dir/measures.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/measures.dir/measures.cpp.s"
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/local.isima.fr/vicanhotod/TP_GeoAlgo/src/measures.cpp -o CMakeFiles/measures.dir/measures.cpp.s
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 
 # Object files for target measures
 measures_OBJECTS = \
@@ -96,25 +116,47 @@ measures_OBJECTS = \
 # External object files for target measures
 measures_EXTERNAL_OBJECTS =
 
+<<<<<<< HEAD
 measures: src/CMakeFiles/measures.dir/measures.cpp.o
 measures: src/CMakeFiles/measures.dir/build.make
 measures: /usr/lib/x86_64-linux-gnu/libgmpxx.so
 measures: /usr/lib/x86_64-linux-gnu/libmpfr.so
 measures: /usr/lib/x86_64-linux-gnu/libgmp.so
 measures: src/CMakeFiles/measures.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../measures"
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build/src" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/measures.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/local.isima.fr/vadinardo/TP_GeoAlgo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../measures"
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/measures.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/measures.dir/build: measures
+=======
+src/measures: src/CMakeFiles/measures.dir/measures.cpp.o
+src/measures: src/CMakeFiles/measures.dir/build.make
+src/measures: /usr/lib/x86_64-linux-gnu/libgmpxx.so
+src/measures: /usr/lib/x86_64-linux-gnu/libmpfr.so
+src/measures: /usr/lib/x86_64-linux-gnu/libgmp.so
+src/measures: src/CMakeFiles/measures.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable measures"
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/measures.dir/link.txt --verbose=$(VERBOSE)
+
+# Rule to build all files generated by this target.
+src/CMakeFiles/measures.dir/build: src/measures
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 
 .PHONY : src/CMakeFiles/measures.dir/build
 
 src/CMakeFiles/measures.dir/clean:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build/src" && $(CMAKE_COMMAND) -P CMakeFiles/measures.dir/cmake_clean.cmake
+<<<<<<< HEAD
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src && $(CMAKE_COMMAND) -P CMakeFiles/measures.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/measures.dir/clean
 
 src/CMakeFiles/measures.dir/depend:
-	cd "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo" "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/src" "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build" "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build/src" "/home/local.isima.fr/vadinardo/shared/3 année/ALGO/TP_GeoAlgo/build/src/CMakeFiles/measures.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /home/local.isima.fr/vadinardo/TP_GeoAlgo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/local.isima.fr/vadinardo/TP_GeoAlgo /home/local.isima.fr/vadinardo/TP_GeoAlgo/src /home/local.isima.fr/vadinardo/TP_GeoAlgo/build /home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src /home/local.isima.fr/vadinardo/TP_GeoAlgo/build/src/CMakeFiles/measures.dir/DependInfo.cmake --color=$(COLOR)
+=======
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src && $(CMAKE_COMMAND) -P CMakeFiles/measures.dir/cmake_clean.cmake
+.PHONY : src/CMakeFiles/measures.dir/clean
+
+src/CMakeFiles/measures.dir/depend:
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/local.isima.fr/vicanhotod/TP_GeoAlgo /home/local.isima.fr/vicanhotod/TP_GeoAlgo/src /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/src/CMakeFiles/measures.dir/DependInfo.cmake --color=$(COLOR)
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
 .PHONY : src/CMakeFiles/measures.dir/depend
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Created by the script cgal_create_CMakeLists
 # This is the CMake script for compiling a set of CGAL applications.
 
@@ -42,3 +43,10 @@ create_single_source_cgal_program( "genre.cpp" )
 create_single_source_cgal_program( "measures.cpp" )
 
 
+=======
+add_executable(genre "genre.cpp")
+add_executable(measures "measures.cpp")
+
+target_link_libraries(genre PRIVATE CGAL)
+target_link_libraries(measures PRIVATE CGAL)
+>>>>>>> 87af73cb9093507404d7822fea600c015c0fb4a5
