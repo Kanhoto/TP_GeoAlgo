@@ -130,19 +130,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named seuillage
-
-# Build rule for target.
-seuillage: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 seuillage
-.PHONY : seuillage
-
-# fast build rule for target.
-seuillage/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/seuillage.dir/build.make src/CMakeFiles/seuillage.dir/build
-.PHONY : seuillage/fast
-
-#=============================================================================
 # Target rules for targets named cgal_check_build_system
 
 # Build rule for target.
@@ -154,19 +141,6 @@ cgal_check_build_system: cmake_check_build_system
 cgal_check_build_system/fast:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/cgal_check_build_system.dir/build.make src/CMakeFiles/cgal_check_build_system.dir/build
 .PHONY : cgal_check_build_system/fast
-
-#=============================================================================
-# Target rules for targets named measures
-
-# Build rule for target.
-measures: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 measures
-.PHONY : measures
-
-# fast build rule for target.
-measures/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/build
-.PHONY : measures/fast
 
 #=============================================================================
 # Target rules for targets named ALL_CGAL_TARGETS
@@ -182,17 +156,17 @@ ALL_CGAL_TARGETS/fast:
 .PHONY : ALL_CGAL_TARGETS/fast
 
 #=============================================================================
-# Target rules for targets named genre
+# Target rules for targets named main
 
 # Build rule for target.
-genre: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 genre
-.PHONY : genre
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-genre/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/build
-.PHONY : genre/fast
+main/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 # Help Target
 help:
@@ -204,9 +178,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ALL_CGAL_TARGETS"
 	@echo "... cgal_check_build_system"
-	@echo "... genre"
-	@echo "... measures"
-	@echo "... seuillage"
+	@echo "... main"
 .PHONY : help
 
 

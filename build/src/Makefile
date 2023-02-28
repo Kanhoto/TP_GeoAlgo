@@ -130,21 +130,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/seuillage.dir/rule:
-	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/seuillage.dir/rule
-.PHONY : src/CMakeFiles/seuillage.dir/rule
-
-# Convenience name for target.
-seuillage: src/CMakeFiles/seuillage.dir/rule
-
-.PHONY : seuillage
-
-# fast build rule for target.
-seuillage/fast:
-	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/seuillage.dir/build.make src/CMakeFiles/seuillage.dir/build
-.PHONY : seuillage/fast
-
-# Convenience name for target.
 src/CMakeFiles/cgal_check_build_system.dir/rule:
 	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/cgal_check_build_system.dir/rule
 .PHONY : src/CMakeFiles/cgal_check_build_system.dir/rule
@@ -158,21 +143,6 @@ cgal_check_build_system: src/CMakeFiles/cgal_check_build_system.dir/rule
 cgal_check_build_system/fast:
 	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cgal_check_build_system.dir/build.make src/CMakeFiles/cgal_check_build_system.dir/build
 .PHONY : cgal_check_build_system/fast
-
-# Convenience name for target.
-src/CMakeFiles/measures.dir/rule:
-	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/measures.dir/rule
-.PHONY : src/CMakeFiles/measures.dir/rule
-
-# Convenience name for target.
-measures: src/CMakeFiles/measures.dir/rule
-
-.PHONY : measures
-
-# fast build rule for target.
-measures/fast:
-	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/build
-.PHONY : measures/fast
 
 # Convenience name for target.
 src/CMakeFiles/ALL_CGAL_TARGETS.dir/rule:
@@ -190,100 +160,46 @@ ALL_CGAL_TARGETS/fast:
 .PHONY : ALL_CGAL_TARGETS/fast
 
 # Convenience name for target.
-src/CMakeFiles/genre.dir/rule:
-	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/genre.dir/rule
-.PHONY : src/CMakeFiles/genre.dir/rule
+src/CMakeFiles/main.dir/rule:
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/rule
+.PHONY : src/CMakeFiles/main.dir/rule
 
 # Convenience name for target.
-genre: src/CMakeFiles/genre.dir/rule
+main: src/CMakeFiles/main.dir/rule
 
-.PHONY : genre
+.PHONY : main
 
 # fast build rule for target.
-genre/fast:
-	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/build
-.PHONY : genre/fast
+main/fast:
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
+.PHONY : main/fast
 
-genre.o: genre.cpp.o
+main.o: main.cpp.o
 
-.PHONY : genre.o
-
-# target to build an object file
-genre.cpp.o:
-	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/genre.cpp.o
-.PHONY : genre.cpp.o
-
-genre.i: genre.cpp.i
-
-.PHONY : genre.i
-
-# target to preprocess a source file
-genre.cpp.i:
-	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/genre.cpp.i
-.PHONY : genre.cpp.i
-
-genre.s: genre.cpp.s
-
-.PHONY : genre.s
-
-# target to generate assembly for a file
-genre.cpp.s:
-	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/genre.cpp.s
-.PHONY : genre.cpp.s
-
-measures.o: measures.cpp.o
-
-.PHONY : measures.o
+.PHONY : main.o
 
 # target to build an object file
-measures.cpp.o:
-	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/measures.cpp.o
-.PHONY : measures.cpp.o
+main.cpp.o:
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-measures.i: measures.cpp.i
+main.i: main.cpp.i
 
-.PHONY : measures.i
-
-# target to preprocess a source file
-measures.cpp.i:
-	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/measures.cpp.i
-.PHONY : measures.cpp.i
-
-measures.s: measures.cpp.s
-
-.PHONY : measures.s
-
-# target to generate assembly for a file
-measures.cpp.s:
-	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/measures.cpp.s
-.PHONY : measures.cpp.s
-
-seuillage.o: seuillage.cpp.o
-
-.PHONY : seuillage.o
-
-# target to build an object file
-seuillage.cpp.o:
-	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/seuillage.dir/build.make src/CMakeFiles/seuillage.dir/seuillage.cpp.o
-.PHONY : seuillage.cpp.o
-
-seuillage.i: seuillage.cpp.i
-
-.PHONY : seuillage.i
+.PHONY : main.i
 
 # target to preprocess a source file
-seuillage.cpp.i:
-	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/seuillage.dir/build.make src/CMakeFiles/seuillage.dir/seuillage.cpp.i
-.PHONY : seuillage.cpp.i
+main.cpp.i:
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-seuillage.s: seuillage.cpp.s
+main.s: main.cpp.s
 
-.PHONY : seuillage.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-seuillage.cpp.s:
-	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/seuillage.dir/build.make src/CMakeFiles/seuillage.dir/seuillage.cpp.s
-.PHONY : seuillage.cpp.s
+main.cpp.s:
+	cd /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -295,18 +211,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ALL_CGAL_TARGETS"
 	@echo "... cgal_check_build_system"
-	@echo "... genre"
-	@echo "... measures"
-	@echo "... seuillage"
-	@echo "... genre.o"
-	@echo "... genre.i"
-	@echo "... genre.s"
-	@echo "... measures.o"
-	@echo "... measures.i"
-	@echo "... measures.s"
-	@echo "... seuillage.o"
-	@echo "... seuillage.i"
-	@echo "... seuillage.s"
+	@echo "... main"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

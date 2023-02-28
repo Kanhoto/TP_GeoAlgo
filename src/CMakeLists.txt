@@ -37,10 +37,10 @@ endif()
 # ##########################################################
 
 
-create_single_source_cgal_program( "genre.cpp" )
+#create_single_source_cgal_program( "genre.cpp" )
 
-create_single_source_cgal_program( "measures.cpp" )
+#create_single_source_cgal_program( "measures.cpp" )
 
-create_single_source_cgal_program( "seuillage.cpp" )
+#create_single_source_cgal_program( "seuillage.cpp" )
 
-
+create_single_source_cgal_program( "main.cpp" )

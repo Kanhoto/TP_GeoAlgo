@@ -90,9 +90,7 @@ clean: src/clean
 # Directory level rules for directory src
 
 # Recursive "all" directory target.
-src/all: src/CMakeFiles/seuillage.dir/all
-src/all: src/CMakeFiles/measures.dir/all
-src/all: src/CMakeFiles/genre.dir/all
+src/all: src/CMakeFiles/main.dir/all
 
 .PHONY : src/all
 
@@ -102,40 +100,11 @@ src/preinstall:
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
-src/clean: src/CMakeFiles/seuillage.dir/clean
 src/clean: src/CMakeFiles/cgal_check_build_system.dir/clean
-src/clean: src/CMakeFiles/measures.dir/clean
 src/clean: src/CMakeFiles/ALL_CGAL_TARGETS.dir/clean
-src/clean: src/CMakeFiles/genre.dir/clean
+src/clean: src/CMakeFiles/main.dir/clean
 
 .PHONY : src/clean
-
-#=============================================================================
-# Target rules for target src/CMakeFiles/seuillage.dir
-
-# All Build rule for target.
-src/CMakeFiles/seuillage.dir/all:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/seuillage.dir/build.make src/CMakeFiles/seuillage.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/seuillage.dir/build.make src/CMakeFiles/seuillage.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/CMakeFiles --progress-num=5,6 "Built target seuillage"
-.PHONY : src/CMakeFiles/seuillage.dir/all
-
-# Build rule for subdir invocation for target.
-src/CMakeFiles/seuillage.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/seuillage.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/seuillage.dir/rule
-
-# Convenience name for target.
-seuillage: src/CMakeFiles/seuillage.dir/rule
-
-.PHONY : seuillage
-
-# clean rule for target.
-src/CMakeFiles/seuillage.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/seuillage.dir/build.make src/CMakeFiles/seuillage.dir/clean
-.PHONY : src/CMakeFiles/seuillage.dir/clean
 
 #=============================================================================
 # Target rules for target src/CMakeFiles/cgal_check_build_system.dir
@@ -165,33 +134,6 @@ src/CMakeFiles/cgal_check_build_system.dir/clean:
 .PHONY : src/CMakeFiles/cgal_check_build_system.dir/clean
 
 #=============================================================================
-# Target rules for target src/CMakeFiles/measures.dir
-
-# All Build rule for target.
-src/CMakeFiles/measures.dir/all:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/CMakeFiles --progress-num=3,4 "Built target measures"
-.PHONY : src/CMakeFiles/measures.dir/all
-
-# Build rule for subdir invocation for target.
-src/CMakeFiles/measures.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/measures.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/measures.dir/rule
-
-# Convenience name for target.
-measures: src/CMakeFiles/measures.dir/rule
-
-.PHONY : measures
-
-# clean rule for target.
-src/CMakeFiles/measures.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/measures.dir/build.make src/CMakeFiles/measures.dir/clean
-.PHONY : src/CMakeFiles/measures.dir/clean
-
-#=============================================================================
 # Target rules for target src/CMakeFiles/ALL_CGAL_TARGETS.dir
 
 # All Build rule for target.
@@ -219,31 +161,31 @@ src/CMakeFiles/ALL_CGAL_TARGETS.dir/clean:
 .PHONY : src/CMakeFiles/ALL_CGAL_TARGETS.dir/clean
 
 #=============================================================================
-# Target rules for target src/CMakeFiles/genre.dir
+# Target rules for target src/CMakeFiles/main.dir
 
 # All Build rule for target.
-src/CMakeFiles/genre.dir/all:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/CMakeFiles --progress-num=1,2 "Built target genre"
-.PHONY : src/CMakeFiles/genre.dir/all
+src/CMakeFiles/main.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/CMakeFiles --progress-num=1,2 "Built target main"
+.PHONY : src/CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
-src/CMakeFiles/genre.dir/rule: cmake_check_build_system
+src/CMakeFiles/main.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/genre.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/local.isima.fr/vicanhotod/TP_GeoAlgo/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/genre.dir/rule
+.PHONY : src/CMakeFiles/main.dir/rule
 
 # Convenience name for target.
-genre: src/CMakeFiles/genre.dir/rule
+main: src/CMakeFiles/main.dir/rule
 
-.PHONY : genre
+.PHONY : main
 
 # clean rule for target.
-src/CMakeFiles/genre.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/genre.dir/build.make src/CMakeFiles/genre.dir/clean
-.PHONY : src/CMakeFiles/genre.dir/clean
+src/CMakeFiles/main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/clean
+.PHONY : src/CMakeFiles/main.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
