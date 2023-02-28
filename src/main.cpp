@@ -2,6 +2,7 @@
 #include "measures.cpp"
 #include "SegparCC.cpp"
 #include "export.cpp"
+#include "octree.cpp"
 
 int main(int argc, char *argv[])
 {
@@ -21,17 +22,21 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 
-	auto mapPerim = computePerimMap(mesh);
+	// auto mapPerim = computePerimMap(mesh);
 
-	const int numberOfClasses = 3;
-	GenerateRandomColorClasses(colorClasses, numberOfClasses);
+	// const int numberOfClasses = 3;
+	// GenerateRandomColorClasses(colorClasses, numberOfClasses);
 
-	//normalizeMap(mapPerim);
-    Facet_int_map result = multipleThreshold(mesh, mapPerim);
+	// //normalizeMap(mapPerim);
+    // Facet_int_map result = multipleThreshold(mesh, mapPerim);
 
-    segmentationParCC(mesh, result);
+    // segmentationParCC(mesh, result);
 
-	writeOFFfromValueMap(mesh, result, argc>=3?argv[2]:"result.off");
+	// writeOFFfromValueMap(mesh, result, argc>=3?argv[2]:"result.off");
+
+	const auto octree = generateOctree(mesh);
+
+	extractMeshFromOctree(octree,mesh);
 
 	return 0;
 }

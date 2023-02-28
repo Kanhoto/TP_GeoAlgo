@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-cmake_minimum_required(VERSION 3.10)
 
-=======
-=======
->>>>>>> main
 cmake_minimum_required(VERSION 3.1...3.25)
 
 project(GeomAlgo LANGUAGES CXX)
@@ -27,9 +21,5 @@ if (NOT Boost_FOUND)
 endif()
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
-<<<<<<< HEAD
->>>>>>> origin/val
-=======
->>>>>>> main
 
 add_subdirectory(src)
