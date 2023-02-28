@@ -1,28 +1,6 @@
-<<<<<<< HEAD
-#include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
-#include <CGAL/boost/graph/graph_traits_Polyhedron_3.h>
-#include <CGAL/IO/Polyhedron_iostream.h>
-
-#include <iostream>
-#include <fstream>
-
-typedef CGAL::Exact_predicates_inexact_constructions_kernel Kernel;
-typedef CGAL::Polyhedron_3<Kernel> Polyhedron;
-
-typedef Polyhedron::Facet_const_iterator Facet_iterator;
-typedef Polyhedron::Vertex_const_iterator Vertex_iterator;
-typedef Polyhedron::Halfedge_const_iterator Halfedge_iterator;
-
-typedef std::map<Polyhedron::Facet_handle, double> Facet_double_map;
-typedef std::map<Polyhedron::Facet_handle, int> Facet_int_map;
-
-int computeGenus(const Polyhedron &mesh)
-{
-=======
 #include "sharedType.hpp"
 
 unsigned int vertsCount(Polyhedron & poly_i){
->>>>>>> main
 	unsigned int nbVerts = 0;
 	for (Vertex_iterator i = poly_i.vertices_begin(); i != poly_i.vertices_end(); ++i) {
 		++nbVerts;
@@ -34,12 +12,7 @@ unsigned int vertsCount(Polyhedron & poly_i){
 
 unsigned int edgesCount(Polyhedron & poly_i){
 	unsigned int nbEdges = 0;
-<<<<<<< HEAD
-	for (Halfedge_iterator i = mesh.halfedges_begin(); i != mesh.halfedges_end(); ++i)
-	{
-=======
 	for (Halfedge_iterator i = poly_i.halfedges_begin(); i != poly_i.halfedges_end(); ++i) {
->>>>>>> main
 		++nbEdges;
 	}
 	nbEdges /= 2;
@@ -50,12 +23,7 @@ unsigned int edgesCount(Polyhedron & poly_i){
 
 unsigned int facesCount(Polyhedron & poly_i){
 	unsigned int nbFaces = 0;
-<<<<<<< HEAD
-	for (Facet_iterator i = mesh.facets_begin(); i != mesh.facets_end(); ++i)
-	{
-=======
 	for (Facet_iterator i = poly_i.facets_begin(); i != poly_i.facets_end(); ++i) {
->>>>>>> main
 		++nbFaces;
 	}
 	std::cout << "Nombre de faces: " << nbFaces << std::endl;
@@ -106,22 +74,11 @@ int main(int argc, char* argv[])
 
 	meshPerimeter(mesh);
 	
-<<<<<<< HEAD
-	if (!input || !(input >> mesh) || mesh.is_empty())
-	{
-		std::cerr << "Le fichier donné n'est pas un fichier off valide." << std::endl;
-		return 1;
-	}
-
-	computeGenus(mesh);
-
-=======
 	unsigned int euler = nbVerts - nbEdges + nbFaces;
 	unsigned int genus = (2 - euler) / 2;
 	std::cout << "En supposant que le maillage contienne une unique surface sans bord, alors son genre est de " << genus << std::endl;
   
   
->>>>>>> main
 	return 0;
 }
 */
