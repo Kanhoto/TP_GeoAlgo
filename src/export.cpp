@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <numeric>
 #include <vector>
+#include <CGAL/IO/Color.h>
 
 typedef CGAL::Exact_predicates_inexact_constructions_kernel Kernel;
 typedef CGAL::Polyhedron_3<Kernel> Polyhedron;
@@ -76,3 +77,35 @@ void writeOFFfromValueMap(const Polyhedron& mesh, const Facet_int_map& facetMap,
 
 	std::cout << "Le résultat a été exporté dans " << filePath << " !" << std::endl;
 }
+
+/*
+// Write an OFF file representing an AABB
+void writeAABB(std::ofstream& out, const AABB& bb, const CGAL::Color& color)
+{
+    out << "OFF\n";
+    out << "8 12 0\n";
+    out << bb.minCorner.x << " " << bb.minCorner.y << " " << bb.minCorner.z << "\n";
+    out << bb.maxCorner.x << " " << bb.minCorner.y << " " << bb.minCorner.z << "\n";
+    out << bb.maxCorner.x << " " << bb.maxCorner.y << " " << bb.minCorner.z << "\n";
+    out << bb.minCorner.x << " " << bb.maxCorner.y << " " << bb.minCorner.z << "\n";
+    out << bb.minCorner.x << " " << bb.minCorner.y << " " << bb.maxCorner.z << "\n";
+    out << bb.maxCorner.x << " " << bb.minCorner.y << " " << bb.maxCorner.z << "\n";
+    out << bb.maxCorner.x << " " << bb.maxCorner.y << " " << bb.maxCorner.z << "\n";
+    out << bb.minCorner.x << " " << bb.maxCorner.y << " " << bb.maxCorner.z << "\n";
+    out << "4 0 1 2 3 " << CGAL::Color(color) << "\n";
+    out << "4 7 6 5 4 " << CGAL::Color(color) << "\n";
+    out << "4 0 4 5 1 " << CGAL::Color(color) << "\n";
+    out << "4 1 5 6 2 " << CGAL::Color(color) << "\n";
+    out << "4 2 6 7 3 " << CGAL::Color(color) << "\n";
+    out << "4 3 7 4 0 " << CGAL::Color(color) << "\n";
+}
+
+
+// Write an OFF file representing the octree
+void writeOctree(std::ofstream& out, const OctreeNode& octree)
+{
+    // Write the bounding box of the root node
+    CGAL::Color color(255, 0, 0);
+    writeAABB(out, octree.cube, color);
+}
+*/

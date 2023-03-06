@@ -250,6 +250,10 @@ void browseNodes(const OctreeNode &root, std::function<void(const OctreeNode&)> 
 	// browseNodes(/*TODO*/, func);
 }
 
+void fillVertices(){
+
+}
+
 void extractMeshFromOctree(const OctreeNode &root, const Polyhedron& mesh){
 
 	std::vector<Point3> vertices;
@@ -260,6 +264,16 @@ void extractMeshFromOctree(const OctreeNode &root, const Polyhedron& mesh){
 
 	std::ofstream out("octree_meshres.off");
 	out << "OFF" << std::endl;
+	AABB bb = root.cube;
+    out << bb.minCorner.x << " " << bb.minCorner.y << " " << bb.minCorner.z << "\n";
+    out << bb.maxCorner.x << " " << bb.minCorner.y << " " << bb.minCorner.z << "\n";
+    out << bb.maxCorner.x << " " << bb.maxCorner.y << " " << bb.minCorner.z << "\n";
+    out << bb.minCorner.x << " " << bb.maxCorner.y << " " << bb.minCorner.z << "\n";
+    out << bb.minCorner.x << " " << bb.minCorner.y << " " << bb.maxCorner.z << "\n";
+    out << bb.maxCorner.x << " " << bb.minCorner.y << " " << bb.maxCorner.z << "\n";
+    out << bb.maxCorner.x << " " << bb.maxCorner.y << " " << bb.maxCorner.z << "\n";
+    out << bb.minCorner.x << " " << bb.maxCorner.y << " " << bb.maxCorner.z << "\n";
+	/*
 	out << vertices.size() << " " << faces.size() << " 0" << std::endl;
 	for (const auto &v : vertices)
 	{
@@ -273,6 +287,7 @@ void extractMeshFromOctree(const OctreeNode &root, const Polyhedron& mesh){
 		}
 		out << std::endl;
 	}
+	*/
 
 }
 
