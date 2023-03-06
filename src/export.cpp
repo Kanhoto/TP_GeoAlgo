@@ -10,7 +10,6 @@
 #include <algorithm>
 #include <numeric>
 #include <vector>
-#include <CGAL/IO/Color.h>
 
 typedef CGAL::Exact_predicates_inexact_constructions_kernel Kernel;
 typedef CGAL::Polyhedron_3<Kernel> Polyhedron;

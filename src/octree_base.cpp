@@ -3,6 +3,7 @@
 #include <CGAL/IO/Polyhedron_iostream.h>
 #include <iostream>
 #include <fstream>
+#include <CGAL/IO/Color.h>
 
 #include <vector>
 #include <algorithm>
@@ -265,6 +266,8 @@ void extractMeshFromOctree(const OctreeNode &root, const Polyhedron& mesh){
 	std::ofstream out("octree_meshres.off");
 	out << "OFF" << std::endl;
 	AABB bb = root.cube;
+	CGAL::Color color(255,0,0,255);
+    out << "8 12 0\n";
     out << bb.minCorner.x << " " << bb.minCorner.y << " " << bb.minCorner.z << "\n";
     out << bb.maxCorner.x << " " << bb.minCorner.y << " " << bb.minCorner.z << "\n";
     out << bb.maxCorner.x << " " << bb.maxCorner.y << " " << bb.minCorner.z << "\n";
@@ -273,6 +276,12 @@ void extractMeshFromOctree(const OctreeNode &root, const Polyhedron& mesh){
     out << bb.maxCorner.x << " " << bb.minCorner.y << " " << bb.maxCorner.z << "\n";
     out << bb.maxCorner.x << " " << bb.maxCorner.y << " " << bb.maxCorner.z << "\n";
     out << bb.minCorner.x << " " << bb.maxCorner.y << " " << bb.maxCorner.z << "\n";
+    out << "4 0 1 2 3 " << CGAL::Color(color) << "\n";
+    out << "4 7 6 5 4 " << CGAL::Color(color) << "\n";
+    out << "4 0 4 5 1 " << CGAL::Color(color) << "\n";
+    out << "4 1 5 6 2 " << CGAL::Color(color) << "\n";
+    out << "4 2 6 7 3 " << CGAL::Color(color) << "\n";
+    out << "4 3 7 4 0 " << CGAL::Color(color) << "\n";
 	/*
 	out << vertices.size() << " " << faces.size() << " 0" << std::endl;
 	for (const auto &v : vertices)
