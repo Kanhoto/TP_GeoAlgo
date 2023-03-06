@@ -13,17 +13,31 @@ typedef CGAL::Polyhedron_3<Kernel> Polyhedron;
 typedef Polyhedron::Facet_const_iterator Facet_iterator;
 typedef Polyhedron::Vertex_const_iterator Vertex_iterator;
 typedef Polyhedron::Halfedge_const_iterator Halfedge_iterator;
+typedef Polyhedron::Vertex_handle Vertex_handle;
 
 typedef Polyhedron::Point_3 Point3;
 
 constexpr int MAX_POINT = 50; // for testing purposes, 
 constexpr int MAX_DEPTH = 5; // it would be much better if these values were given to the function where the tree is being constructed.
 
+struct Point3D{
+	double x,y,z;
+};
+
 /// @brief Axis-Aligned bounding box
 struct AABB
 {
 	// TODO...
+	Point3D minCorner;
+	Point3D maxCorner;
+
 	std::list<Point3> Vertices;
+
+	void displaySize(){
+		std::cout << "x : max = " << minCorner.x << " minX = " << maxCorner.x << std::endl;
+		std::cout << "y : max = " << minCorner.y << " minY = " << maxCorner.y << std::endl;
+		std::cout << "z : max = " << minCorner.z << " minZ = " << maxCorner.z << std::endl;
+	}
 };
 
 struct Adress{
@@ -35,8 +49,29 @@ struct OctreeNode
 	// TODO...
 	AABB cube;
 	std::vector<OctreeNode*> nodeChilds;
-	//std::list<Vertex_handle> vertexlist;
+	std::list<Vertex_handle> vertexlist;
 	Adress Adr;
+	int depth = 0;
+
+	void setAdr(int x, int y, int z){
+		Adr.x = x;
+		Adr.y = y;
+		Adr.z = z;
+	}
+
+	OctreeNode* getChild(const int x, const int y, const int z) const{
+		return nodeChilds[4*x + 2*y + z];
+	}
+
+	void DisplayNodeAdr() const{
+		std::cout << Adr.x << Adr.y << Adr.z << std::endl;
+	}
+
+	void createChildsAABB(){
+		for(auto it=nodeChilds.begin(); it!=nodeChilds.end(); ++it){
+			
+		}
+	}
 };
 
 /// @brief Compute the bounding box of a mesh
@@ -45,30 +80,69 @@ struct OctreeNode
 AABB computeBB(const Polyhedron &mesh)
 {
 	// TODO...
+	Point3 f = mesh.vertices_begin()->point();
+	AABB result {
+		.minCorner{
+			.x=f.x(),
+			.y=f.y(),
+			.z=f.z()
+		},
+		.maxCorner{
+			.x=f.x(),
+			.y=f.y(),
+			.z=f.z()
+		}
+	};
 
-	return AABB{};
+	for(auto it=mesh.vertices_begin(); it != mesh.vertices_end(); ++it){
+		Point3 pt = it->point();
+		if(pt.x() < result.minCorner.x){
+			result.minCorner.x = pt.x();
+		}
+		if(pt.x() > result.maxCorner.x){
+			result.maxCorner.x = pt.x();
+		}
+
+		if(pt.y() < result.minCorner.y){
+			result.minCorner.y = pt.y();
+		}
+		if(pt.y() > result.maxCorner.y){
+			result.maxCorner.y = pt.y();
+		}
+
+		if(pt.z() < result.minCorner.z){
+			result.minCorner.z = pt.z();
+		}
+		if(pt.z() > result.maxCorner.z){
+			result.maxCorner.z = pt.z();
+		}
+		result.Vertices.push_back(pt);
+	}
+
+	result.displaySize();
+	return result;
 }
 
-/// @brief add a level to the given parent Octree node, by creating 8 children with 8 bounding box,
-/// sliced in the middle of the parent node
-/// @param node the octree node to which 8 children will be added
-void addOctreeLevel(OctreeNode &node, const int depth = 0)
-{
-	if(depth >0){
-		
-	}
-	// TODO...
-	for(int i=0; i<2; ++i){
-		for(int j=0; j<2; ++j){
-			for(int k=0; k<2; ++k){
-				OctreeNode child;
-				child.Adr.z = k;
-				child.Adr.y = j;
-				child.Adr.x = i;
-				node.nodeChilds.push_back(&child);
-			}
-		}
-	}
+void subdivideAABB(OctreeNode &nodeParent, OctreeNode &node){
+	double midX = (nodeParent.cube.minCorner.x + nodeParent.cube.maxCorner.x) / 2.0;
+	double midY = (nodeParent.cube.minCorner.y + nodeParent.cube.maxCorner.y) / 2.0;
+	double midZ = (nodeParent.cube.minCorner.z + nodeParent.cube.maxCorner.z) / 2.0;
+
+	node.cube.minCorner.x = node.Adr.x ? midX : nodeParent.cube.minCorner.x;
+	node.cube.minCorner.y = node.Adr.y ? midY : nodeParent.cube.minCorner.y;
+	node.cube.minCorner.z = node.Adr.z ? midZ : nodeParent.cube.minCorner.z;
+
+	node.cube.maxCorner.x = node.Adr.x ? nodeParent.cube.maxCorner.x : midX;
+	node.cube.maxCorner.y = node.Adr.y ? nodeParent.cube.maxCorner.y : midY;
+	node.cube.maxCorner.z = node.Adr.z ? nodeParent.cube.maxCorner.z : midZ;
+
+	node.cube.displaySize();
+}
+
+bool isInsideAABB(AABB & box, Polyhedron::Vertex_handle &p){
+	return (p->point().x() >= box.minCorner.x && p->point().x() <= box.maxCorner.x &&
+			p->point().y() >= box.minCorner.y && p->point().y() <= box.maxCorner.y &&
+			p->point().z() >= box.minCorner.z && p->point().z() <= box.maxCorner.z);
 }
 
 /// @brief add one vertex to an octree, by following strictly the rules of maximum amount of point in a node, and maximum depth of the tree
@@ -77,7 +151,48 @@ void addOctreeLevel(OctreeNode &node, const int depth = 0)
 void addVertexToOctree(OctreeNode &root, Polyhedron::Vertex_handle &vert)
 {
 	// TODO, this function can be recursive
+	root.vertexlist.push_back(vert);
+}
 
+void vertexFromParent(OctreeNode &parent, OctreeNode &child){
+	for(auto vert : parent.vertexlist){
+		if(isInsideAABB(child.cube, vert)){
+			child.vertexlist.push_back(vert);
+		}
+	}
+}
+
+/// @brief add a level to the given parent Octree node, by creating 8 children with 8 bounding box,
+/// sliced in the middle of the parent node
+/// @param node the octree node to which 8 children will be added
+void addOctreeLevel(OctreeNode &node, int depth = 1)
+{
+	//printf("\n\n");
+	// TODO...
+	for(int x=0; x<2; ++x){
+		for(int y=0; y<2; ++y){
+			for(int z=0; z<2; ++z){
+				OctreeNode *child = new OctreeNode();
+				child->setAdr(x,y,z);
+				child->depth = depth;
+				subdivideAABB(node,*child);
+				vertexFromParent(node, *child);
+
+				node.nodeChilds.push_back(child);
+				if(child->vertexlist.size() > MAX_POINT && depth < MAX_DEPTH){
+					addOctreeLevel(*child, depth++);
+				}
+			}
+		}
+	}
+
+	node.vertexlist.clear();
+}
+
+void VertexFromMesh(Polyhedron &mesh, OctreeNode & node){
+	for(auto it=mesh.vertices_begin(); it != mesh.vertices_end(); ++it){
+		node.vertexlist.push_back(it);
+	}
 }
 
 /// @brief A function to generate an octree of the vertices of a mesh,
@@ -93,7 +208,19 @@ void addVertexToOctree(OctreeNode &root, Polyhedron::Vertex_handle &vert)
 OctreeNode generateOctree(Polyhedron &mesh)
 {
 	OctreeNode root{};
-	addOctreeLevel(root);
+	VertexFromMesh(mesh, root);
+	root.cube = computeBB(mesh);
+
+	if(root.vertexlist.size() > MAX_POINT){
+		addOctreeLevel(root);
+	}
+	
+	/*
+	for(auto child:root.nodeChilds){
+		child->DisplayNodeAdr();
+		child->getChild(0,0,0)->DisplayNodeAdr();
+	}
+	*/
 	// TODO...
 	return root;
 }
