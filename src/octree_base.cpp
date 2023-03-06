@@ -251,53 +251,69 @@ void browseNodes(const OctreeNode &root, std::function<void(const OctreeNode&)> 
 	// browseNodes(/*TODO*/, func);
 }
 
-void fillVertices(){
 
+void traverse_octree(const OctreeNode& node, std::vector<AABB> &vertices)
+{
+  if (node.nodeChilds.size()==0) {
+    if (node.vertexlist.size()>0)
+	{	
+		vertices.push_back(node.cube);
+	}
+    return;
+  }
+
+  for(int x=0; x<2; ++x){
+		for(int y=0; y<2; ++y){
+			for(int z=0; z<2; ++z){
+				OctreeNode child_node = node.getChild(x, y ,z);
+				traverse_octree(child_node);
+			}
+		}
+    }
 }
+
 
 void extractMeshFromOctree(const OctreeNode &root, const Polyhedron& mesh){
 
-	std::vector<Point3> vertices;
-	std::vector<std::vector<int>> faces;
+	std::vector<AABB> vertices;
 
 	// TODO: fill "vertices" and "faces" by going through the octree
-
+	traverse_octree(root, vertices);
 
 	std::ofstream out("octree_meshres.off");
 	out << "OFF" << std::endl;
 	AABB bb = root.cube;
-	CGAL::Color color(255,0,0,255);
-    out << "8 12 0\n";
-    out << bb.minCorner.x << " " << bb.minCorner.y << " " << bb.minCorner.z << "\n";
-    out << bb.maxCorner.x << " " << bb.minCorner.y << " " << bb.minCorner.z << "\n";
-    out << bb.maxCorner.x << " " << bb.maxCorner.y << " " << bb.minCorner.z << "\n";
-    out << bb.minCorner.x << " " << bb.maxCorner.y << " " << bb.minCorner.z << "\n";
-    out << bb.minCorner.x << " " << bb.minCorner.y << " " << bb.maxCorner.z << "\n";
-    out << bb.maxCorner.x << " " << bb.minCorner.y << " " << bb.maxCorner.z << "\n";
-    out << bb.maxCorner.x << " " << bb.maxCorner.y << " " << bb.maxCorner.z << "\n";
-    out << bb.minCorner.x << " " << bb.maxCorner.y << " " << bb.maxCorner.z << "\n";
-    out << "4 0 1 2 3 " << CGAL::Color(color) << "\n";
-    out << "4 7 6 5 4 " << CGAL::Color(color) << "\n";
-    out << "4 0 4 5 1 " << CGAL::Color(color) << "\n";
-    out << "4 1 5 6 2 " << CGAL::Color(color) << "\n";
-    out << "4 2 6 7 3 " << CGAL::Color(color) << "\n";
-    out << "4 3 7 4 0 " << CGAL::Color(color) << "\n";
-	/*
-	out << vertices.size() << " " << faces.size() << " 0" << std::endl;
-	for (const auto &v : vertices)
-	{
-		out << v.x() << " " << v.y() << " " << v.z() << std::endl;
-	}
-	for (const auto &f : faces)
-	{
-		out << f.size() << " ";
-		for(auto fi : f){
-			out << fi << " ";
-		}
-		out << std::endl;
-	}
-	*/
+    out << 8*vertices.size()<<" "<<12*vertices.size()<<" "<< 6*vertices.size()<<"\n";
 
+    out << "4 0 1 2 3\n";
+    out << "4 7 6 5 4\n";
+    out << "4 0 4 5 1\n";
+    out << "4 1 5 6 2\n";
+    out << "4 2 6 7 3\n";
+    out << "4 3 7 4 0\n";
+
+	for (const auto &bb : vertices)
+	{
+		out << bb.minCorner.x << " " << bb.minCorner.y << " " << bb.minCorner.z << "\n";
+		out << bb.maxCorner.x << " " << bb.minCorner.y << " " << bb.minCorner.z << "\n";
+		out << bb.maxCorner.x << " " << bb.maxCorner.y << " " << bb.minCorner.z << "\n";
+		out << bb.minCorner.x << " " << bb.maxCorner.y << " " << bb.minCorner.z << "\n";
+		out << bb.minCorner.x << " " << bb.minCorner.y << " " << bb.maxCorner.z << "\n";
+		out << bb.maxCorner.x << " " << bb.minCorner.y << " " << bb.maxCorner.z << "\n";
+		out << bb.maxCorner.x << " " << bb.maxCorner.y << " " << bb.maxCorner.z << "\n";
+		out << bb.minCorner.x << " " << bb.maxCorner.y << " " << bb.maxCorner.z << "\n";
+	}
+	int min = 0;
+	for (const auto &f : vertices)
+	{
+		out << "4 "<< min << " " << min+1 << " " << min+2 << " " << min+3 <<" \n";
+		out << "4 "<< min+7 << " " << min+6 << " " << min+5 << " " << min+4 <<" \n";
+		out << "4 "<< min << " " << min+4 << " " << min+5 << " " << min+1 <<" \n";
+		out << "4 "<< min+1 << " " << min+5 << " " << min+6 << " " << min+2 <<" \n";
+		out << "4 "<< min+2 << " " << min+6 << " " << min+7 << " " << min+3 <<" \n";
+		out << "4 "<< min+3 << " " << min+7 << " " << min+4 << " " << min <<" \n";
+		min += 8;
+	}
 }
 
 /*
