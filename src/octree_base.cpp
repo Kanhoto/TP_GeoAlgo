@@ -193,36 +193,6 @@ void VertexFromMesh(Polyhedron &mesh, OctreeNode & node){
 	}
 }
 
-/// @brief A function to generate an octree of the vertices of a mesh,
-/// Each vertex will be stored in a node of the octree.
-/// the octree shall follow two rules:
-///    1- each node shall only contain MAX_POINT vertices
-///    2- the depth of tree shall not exceed MAX_DEPTH
-///	Remark: the depth of the root is 0
-///	Remark: rule 2 wins over rule 1.
-/// i.e. a node may contain more vertices than MAX_POINT if the maximum depth is reached.
-/// @param mesh the mesh of interest
-/// @return an octree node that is the root of the octree for the given mesh
-OctreeNode generateOctree(Polyhedron &mesh)
-{
-	OctreeNode root{};
-	VertexFromMesh(mesh, root);
-	root.cube = computeBB(mesh);
-
-	if(root.vertexlist.size() > MAX_POINT){
-		addOctreeLevel(root);
-	}
-	
-	/*
-	for(auto child:root.nodeChilds){
-		child->DisplayNodeAdr();
-		child->getChild(0,0,0)->DisplayNodeAdr();
-	}
-	*/
-	// TODO...
-	return root;
-}
-
 /// @brief find a specific vertex inside an octree (using a dichotomy algorithm)
 /// @param vh the vertex handle to look for
 /// @return the address of the node (not the prettiest way, feel free to handle it differently)
@@ -263,8 +233,13 @@ std::vector<PointMoy3D> listPoints;
 std::vector<std::vector<int>> faces;
 
 void SimplifyMesh(const OctreeNode &node){
-	Point3 average = std::accumulate(node.vertexlist.begin(), node.vertexlist.end(), Point3(0,0,0), averagePoint);
-	average = Point3(average.x()/node.vertexlist.size(), average.y()/node.vertexlist.size(), average.z()/node.vertexlist.size());
+	double x=0, y=0, z=0;
+	for(auto vt : node.vertexlist){
+		x+=vt->point().x();
+		y+=vt->point().y();
+		z+=vt->point().z();
+	}
+	Point3 average = Point3(x/node.vertexlist.size(), y/node.vertexlist.size(), z/node.vertexlist.size());
 
 	listPoints.push_back({
 		.pt=average, 
@@ -320,8 +295,7 @@ void WriteOFFsimplified(const Polyhedron &mesh){
 
 	std::ofstream out("octree_meshresSimplified.off");
 	out << "OFF" << std::endl;
-	//out << 8*BBoxes.size()<<" "<<12*BBoxes.size()<<" "<< 6*BBoxes.size()<<"\n";
-
+	out << listPoints.size() << " " << faces.size() << " 0" << std::endl;
 	for(auto point : listPoints){
 		out << point.pt.x() << " " << point.pt.y() << " " << point.pt.z() << "\n";
 	}
@@ -375,6 +349,37 @@ void extractMeshFromOctree(const OctreeNode &root, const Polyhedron& mesh){
 		out << "4 "<< min+3 << " " << min+7 << " " << min+4 << " " << min <<" \n";
 		min += 8;
 	}
+}
+
+/// @brief A function to generate an octree of the vertices of a mesh,
+/// Each vertex will be stored in a node of the octree.
+/// the octree shall follow two rules:
+///    1- each node shall only contain MAX_POINT vertices
+///    2- the depth of tree shall not exceed MAX_DEPTH
+///	Remark: the depth of the root is 0
+///	Remark: rule 2 wins over rule 1.
+/// i.e. a node may contain more vertices than MAX_POINT if the maximum depth is reached.
+/// @param mesh the mesh of interest
+/// @return an octree node that is the root of the octree for the given mesh
+OctreeNode generateOctree(Polyhedron &mesh)
+{
+	OctreeNode root{};
+	VertexFromMesh(mesh, root);
+	root.cube = computeBB(mesh);
+
+	if(root.vertexlist.size() > MAX_POINT){
+		addOctreeLevel(root);
+	}
+
+	WriteOFFsimplified(mesh);
+	/*
+	for(auto child:root.nodeChilds){
+		child->DisplayNodeAdr();
+		child->getChild(0,0,0)->DisplayNodeAdr();
+	}
+	*/
+	// TODO...
+	return root;
 }
 
 /*
