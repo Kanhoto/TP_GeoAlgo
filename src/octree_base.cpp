@@ -251,13 +251,36 @@ void browseNodes(const OctreeNode &root, std::function<void(const OctreeNode&)> 
 	// browseNodes(/*TODO*/, func);
 }
 
+Point3 averagePoint(Point3 &lv, Point3 &rv){
+	Point3 result(lv.x() + rv.x(), lv.y() + rv.y(), lv.z() + rv.z());
 
-void traverse_octree(const OctreeNode& node, std::vector<AABB> &vertices)
+	return result;
+}
+
+struct PointMoy3D{
+	Point3 pt;
+	std::list<Vertex_handle> vertexlist;
+};
+
+std::vector<PointMoy3D> listPoints;
+std::vector<std::vector<int>> faces;
+
+void SimplifyMesh(const OctreeNode &node){
+	Point3 average = std::accumulate(node.vertexlist.begin(), node.vertexlist.end(), Point3(0,0,0), averagePoint);
+	average = Point3(average.x()/node.vertexlist.size(), average.y()/node.vertexlist.size(), average.z()/node.vertexlist.size());
+
+	listPoints.push_back({
+		.pt=average, 
+		.vertexlist = node.vertexlist});
+}
+
+void traverse_octree(const OctreeNode& node, std::vector<AABB> &BBoxes)
 {
   if (node.nodeChilds.size()==0) {
     if (node.vertexlist.size()>0)
 	{	
-		vertices.push_back(node.cube);
+		BBoxes.push_back(node.cube);
+		SimplifyMesh(node);
 	}
     return;
   }
@@ -265,25 +288,67 @@ void traverse_octree(const OctreeNode& node, std::vector<AABB> &vertices)
   for(int x=0; x<2; ++x){
 		for(int y=0; y<2; ++y){
 			for(int z=0; z<2; ++z){
-				OctreeNode child_node = node.getChild(x, y ,z);
-				traverse_octree(child_node);
+				OctreeNode* child_node = node.getChild(x, y ,z);
+				
+				traverse_octree(*child_node, BBoxes);
 			}
 		}
     }
 }
 
+/*
+Vertex_handle isInArray(Vertex_handle &lv, Vertex_handle &rv){
+	return lv
+}
+*/
+
+void WriteOFFsimplified(const Polyhedron &mesh){
+	std::vector<int> temp;
+	for(auto it=mesh.vertex_handles().begin(); it!= mesh.vertex_handles().end(); ++it){
+		for(int i=0; i<listPoints.size(); ++i){
+			for(auto vert : listPoints[i].vertexlist){
+				if(*it == vert){
+					if(std::find(temp.begin(), temp.end(), i) == temp.end()){
+						temp.push_back(i);
+					}
+					if(temp.size()>2){
+						faces.push_back(temp);
+						temp.clear();
+					}
+					break;
+				}
+			}
+		}
+	}
+
+	std::ofstream out("octree_meshresSimplified.off");
+	out << "OFF" << std::endl;
+	//out << 8*BBoxes.size()<<" "<<12*BBoxes.size()<<" "<< 6*BBoxes.size()<<"\n";
+
+	for(auto point : listPoints){
+		out << point.pt.x() << " " << point.pt.y() << " " << point.pt.z() << "\n";
+	}
+	for(auto face : faces){
+		out << face.size() << " ";
+		for(auto fi : face){
+			out << fi << " ";
+		}
+		out << std::endl;
+	}
+}
 
 void extractMeshFromOctree(const OctreeNode &root, const Polyhedron& mesh){
 
-	std::vector<AABB> vertices;
+	std::vector<AABB> BBoxes;
+	std::vector<Point3> Vertexs;
 
 	// TODO: fill "vertices" and "faces" by going through the octree
-	traverse_octree(root, vertices);
+	traverse_octree(root, BBoxes);
 
 	std::ofstream out("octree_meshres.off");
 	out << "OFF" << std::endl;
 	AABB bb = root.cube;
-    out << 8*vertices.size()<<" "<<12*vertices.size()<<" "<< 6*vertices.size()<<"\n";
+    out << 8*BBoxes.size()<<" "<<12*BBoxes.size()<<" "<< 6*BBoxes.size()<<"\n";
 
     out << "4 0 1 2 3\n";
     out << "4 7 6 5 4\n";
@@ -292,7 +357,7 @@ void extractMeshFromOctree(const OctreeNode &root, const Polyhedron& mesh){
     out << "4 2 6 7 3\n";
     out << "4 3 7 4 0\n";
 
-	for (const auto &bb : vertices)
+	for (const auto &bb : BBoxes)
 	{
 		out << bb.minCorner.x << " " << bb.minCorner.y << " " << bb.minCorner.z << "\n";
 		out << bb.maxCorner.x << " " << bb.minCorner.y << " " << bb.minCorner.z << "\n";
@@ -304,7 +369,7 @@ void extractMeshFromOctree(const OctreeNode &root, const Polyhedron& mesh){
 		out << bb.minCorner.x << " " << bb.maxCorner.y << " " << bb.maxCorner.z << "\n";
 	}
 	int min = 0;
-	for (const auto &f : vertices)
+	for (const auto &f : BBoxes)
 	{
 		out << "4 "<< min << " " << min+1 << " " << min+2 << " " << min+3 <<" \n";
 		out << "4 "<< min+7 << " " << min+6 << " " << min+5 << " " << min+4 <<" \n";
