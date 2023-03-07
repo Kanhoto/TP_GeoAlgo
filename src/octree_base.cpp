@@ -18,8 +18,8 @@ typedef Polyhedron::Vertex_handle Vertex_handle;
 
 typedef Polyhedron::Point_3 Point3;
 
-constexpr int MAX_POINT = 50; // for testing purposes, 
-constexpr int MAX_DEPTH = 5; // it would be much better if these values were given to the function where the tree is being constructed.
+constexpr int MAX_POINT = 10; // for testing purposes, 
+constexpr int MAX_DEPTH = 20; // it would be much better if these values were given to the function where the tree is being constructed.
 
 struct Point3D{
 	double x,y,z;
@@ -120,7 +120,6 @@ AABB computeBB(const Polyhedron &mesh)
 		result.Vertices.push_back(pt);
 	}
 
-	result.displaySize();
 	return result;
 }
 
@@ -136,8 +135,6 @@ void subdivideAABB(OctreeNode &nodeParent, OctreeNode &node){
 	node.cube.maxCorner.x = node.Adr.x ? nodeParent.cube.maxCorner.x : midX;
 	node.cube.maxCorner.y = node.Adr.y ? nodeParent.cube.maxCorner.y : midY;
 	node.cube.maxCorner.z = node.Adr.z ? nodeParent.cube.maxCorner.z : midZ;
-
-	node.cube.displaySize();
 }
 
 bool isInsideAABB(AABB & box, Polyhedron::Vertex_handle &p){
@@ -180,7 +177,7 @@ void addOctreeLevel(OctreeNode &node, int depth = 1)
 				vertexFromParent(node, *child);
 
 				node.nodeChilds.push_back(child);
-				if(child->vertexlist.size() > MAX_POINT && depth < MAX_DEPTH){
+				if(child->vertexlist.size() >= MAX_POINT && depth <= MAX_DEPTH){
 					addOctreeLevel(*child, depth++);
 				}
 			}
@@ -347,15 +344,14 @@ void extractMeshFromOctree(const OctreeNode &root, const Polyhedron& mesh){
 
 	std::ofstream out("octree_meshres.off");
 	out << "OFF" << std::endl;
-	AABB bb = root.cube;
     out << 8*BBoxes.size()<<" "<<12*BBoxes.size()<<" "<< 6*BBoxes.size()<<"\n";
 
-    out << "4 0 1 2 3\n";
-    out << "4 7 6 5 4\n";
-    out << "4 0 4 5 1\n";
-    out << "4 1 5 6 2\n";
-    out << "4 2 6 7 3\n";
-    out << "4 3 7 4 0\n";
+    // out << "4 0 1 2 3\n";
+    // out << "4 7 6 5 4\n";
+    // out << "4 0 4 5 1\n";
+    // out << "4 1 5 6 2\n";
+    // out << "4 2 6 7 3\n";
+    // out << "4 3 7 4 0\n";
 
 	for (const auto &bb : BBoxes)
 	{
